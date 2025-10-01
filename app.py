@@ -39,17 +39,12 @@ def create_blog_post(topic):
     except Exception as e:
         return f"An error occurred: {e}"
 
-@app.route('/generate-blog', methods=['POST'])
-def generate_blog():
-    """API endpoint to generate a blog post."""
-    data = request.get_json()
-    topic = data.get('topic')
-
-    if not topic:
-        return jsonify({"error": "No topic was provided."}), 400
-
-    blog_post = create_blog_post(topic)
-    return jsonify({"blog_post": blog_post})
+# --- ADD THIS NEW ROUTE ---
+# This route will serve your frontend's main page
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 if __name__ == '__main__':
+
     app.run(debug=True, port=5000)
