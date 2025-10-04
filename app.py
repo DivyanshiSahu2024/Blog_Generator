@@ -4,11 +4,11 @@ import os
 from openai import OpenAI
 from dotenv import load_dotenv  
 
-load_dotenv()  # <-- Add this line to load variables from .env
+load_dotenv()  #to load variables from .env
 
 # Initialize the Flask application
 app = Flask(__name__)
-CORS(app)  # This allows your frontend to communicate with the backend
+CORS(app)  # This allows the frontend to communicate with the backend
 
 # Securely get your OpenAI API key from environment variables
 # Make sure you have set this in your system
@@ -38,13 +38,14 @@ def create_blog_post(topic):
         return response.choices[0].message.content
     except Exception as e:
         return f"An error occurred: {e}"
-
+    pass #placeholder for existing function
 # --- ADD THIS NEW ROUTE ---
 # This route will serve your frontend's main page
-@app.route('/')
+@app.route('/generate-blog', methods=['POST']')
 def index():
     return render_template('index.html')
 
 if __name__ == '__main__':
 
     app.run(debug=True, port=5000)
+
