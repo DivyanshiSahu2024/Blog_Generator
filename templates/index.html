@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Blog Post Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Blog Post Generator</h1>
+        <p>Enter a topic and let AI create a blog post for you.</p>
+        <textarea id="topic-input" placeholder="e.g., The future of space exploration"></textarea>
+        <button id="generate-btn">Generate</button>
+        <div class="blog-output-container">
+            <h2>Generated Blog Post:</h2>
+            <img id="blog-image" src="" alt="Generated Blog Image" style="display:none; width:100%; border-radius:12px; margin-bottom:1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <div id="blog-output">Your generated post will appear here...</div>
+            <button id="copy-btn" style="display:none;">Copy</button>
+
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</body>
+</html>
