@@ -93,3 +93,6 @@ This project is open-source and available under the MIT License.
     git commit -m "Add documentation"
     git push
     ```
+<img width="1065" height="5377" alt="bloggen-kfzr onrender com_" src="https://github.com/user-attachments/assets/a10d0944-7ad9-4eae-9911-50c593f367e9" />
+
+    
